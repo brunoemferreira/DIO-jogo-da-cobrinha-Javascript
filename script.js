@@ -3,9 +3,10 @@
   - A comidinha é carregada aleatoriamente no quadrado maior
 
 */
-
 let canvas = document.getElementById("snake");
 let context = canvas.getContext("2d");
+let score = document.querySelector('h2');
+
 let box = 32;
 let snake = [];
 snake[0] = {
@@ -17,6 +18,7 @@ let food = {
   x: Math.floor(Math.random() * 15 + 1) * box,
   y: Math.floor(Math.random() * 15 + 1) * box,
 }
+let sum = 0;
 
 function criarBG() {
   // Define a cor
@@ -27,7 +29,7 @@ function criarBG() {
 
 function criarCobrinha() {
   for (i = 0; i < snake.length; i++) {
-    context.fillStyle = "#C44AC6";
+    context.fillStyle = "red";
     context.fillRect(snake[i].x, snake[i].y, box, box);
   }
 }
@@ -59,6 +61,7 @@ function iniciarJogo() {
     if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
       clearInterval(jogo);
       alert('Game Over :( ');
+      score.textContent = `Score : 0`;
     }
   }
 
@@ -80,6 +83,8 @@ function iniciarJogo() {
   } else {
     food.x = Math.floor(Math.random() * 15 + 1) * box;
     food.y = Math.floor(Math.random() * 15 + 1) * box;
+    sum = sum + 1;
+    score.textContent = `Score : ${sum}`;
   }
 
   let newHead = {
