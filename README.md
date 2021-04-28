@@ -31,10 +31,6 @@ O projeto é o famoso jogo da cobrinha, desenvolvido em HTML, CSS e Javascript, 
    <img src="./Assets/imagem2.png"/>
 </div>
 
-<div align="center">
-   <img src="./Assets/tela3.png"/>
-</div>
-
 <a id="tecnologias-e-bibliotecas"></a>
 ## 🧰 Tecnologias e Bibliotecas
 
